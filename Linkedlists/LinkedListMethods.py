@@ -49,11 +49,38 @@ class LinkedList:
                 return head
             head = head.next
 
+    def remove(self,value):
+        """
+        removes node with matched value
+        """
+        head_node = self.head
+        prev_node = None
+
+        while head_node:
+            if head_node.value == value:
+                if prev_node == None:
+                    self.head = head_node.next
+                    return
+                prev_node.next = head_node.next
+            prev_node = head_node
+            head_node = prev_node.next
+    def pop_first(self):
+        self.head = self.head.next
+
+
+
+
 ll = LinkedList()
-ll.prepend(10)
-ll.prepend(20)
-ll.prepend(30)
+# ll.prepend(10)
+# ll.prepend(20)
+# ll.prepend(30)
 ll.append(40)
 ll.append(50)
+ll.append(60)
+ll.append(70)
+
 print(ll.to_list())
-print(ll.search(40))
+ll.pop_first()
+ll.pop_last()
+ll.pop_last()
+print(ll.to_list())
