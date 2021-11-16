@@ -67,10 +67,20 @@ class LinkedList:
     def pop_first(self):
         self.head = self.head.next
 
+    def __len__(self):
+        count = 0
+        head = self.head
+        while head:
+            count = count + 1
+            head = head.next
+        return count
+    
+
 
 
 
 ll = LinkedList()
+print(len(ll))
 # ll.prepend(10)
 # ll.prepend(20)
 # ll.prepend(30)
@@ -78,9 +88,9 @@ ll.append(40)
 ll.append(50)
 ll.append(60)
 ll.append(70)
-
+print(len(ll))
 print(ll.to_list())
+
 ll.pop_first()
-ll.pop_last()
-ll.pop_last()
+print(len(ll))
 print(ll.to_list())
