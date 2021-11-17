@@ -64,11 +64,14 @@ class LinkedList:
                     self.head = head_node.next
                     return
                 prev_node.next = head_node.next
+                return
             prev_node = head_node
             head_node = prev_node.next
 
     def pop_first(self):
+        head = self.head
         self.head = self.head.next
+        return head.value
 
     def __len__(self):
         count = 0
@@ -104,15 +107,3 @@ class LinkedList:
         return
 
 
-ll = LinkedList()
-ll.append(1)
-ll.append(2)
-ll.append(3)
-ll.append(4)
-ll.insert(50, 0)
-ll.insert(60, 1)
-ll.insert(70, 2)
-ll.insert(80, 10)
-# ll.insert(90, 70)
-# ll.insert(100, 0)
-print(ll.to_list())
